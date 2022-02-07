@@ -1,0 +1,14 @@
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\obj\Debug\net6.0\CompanySearcher.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\obj\Debug\net6.0\CompanySearcher.AssemblyInfoInputs.cache
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\obj\Debug\net6.0\CompanySearcher.AssemblyInfo.cs
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\obj\Debug\net6.0\CompanySearcher.csproj.CoreCompileInputs.cache
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Debug\net6.0\CompanySearcher.exe
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Debug\net6.0\CompanySearcher.deps.json
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Debug\net6.0\CompanySearcher.runtimeconfig.json
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Debug\net6.0\CompanySearcher.dll
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Debug\net6.0\ref\CompanySearcher.dll
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Debug\net6.0\CompanySearcher.pdb
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\obj\Debug\net6.0\CompanySearcher.dll
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\obj\Debug\net6.0\ref\CompanySearcher.dll
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\obj\Debug\net6.0\CompanySearcher.pdb
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\obj\Debug\net6.0\CompanySearcher.genruntimeconfig.cache
