@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "pVnR0AcSc14Jt4Ysk7U4oBWkkWQpenWQtH52b7On0sexx+bmW8wiJx22kyBkiEgUIIIaSyyvhQFmw8Fw6W1n7g==",
+  "dgSpecHash": "cAxnxSphRzfmxSEcR8N2K/Z1dCauCLJZLllt3XTCG9iWHZkxnnOUQMkwxo9QYDBhgd3aKJC3fUxUuHN3MdBAFw==",
   "success": true,
   "projectFilePath": "D:\\Project Repositories\\KeywordSearcher\\CompanySearcher\\CompanySearcher\\CompanySearcher.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\bener\\.nuget\\packages\\google.apis\\1.55.0\\google.apis.1.55.0.nupkg.sha512",
+    "C:\\Users\\bener\\.nuget\\packages\\google.apis.core\\1.55.0\\google.apis.core.1.55.0.nupkg.sha512",
+    "C:\\Users\\bener\\.nuget\\packages\\google.apis.customsearchapi.v1\\1.55.0.2455\\google.apis.customsearchapi.v1.1.55.0.2455.nupkg.sha512",
+    "C:\\Users\\bener\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\bener\\.nuget\\packages\\system.json\\4.7.1\\system.json.4.7.1.nupkg.sha512"
+  ],
   "logs": []
 }
