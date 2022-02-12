@@ -72,7 +72,7 @@ namespace CompanySearcher
 
         public static (bool, string) ExecuteSearches()
         {
-            bool success = false;
+            bool success = true;
             string errorMessage = string.Empty;
 
             foreach (List<string> keywordSearch in keywordSearches)
