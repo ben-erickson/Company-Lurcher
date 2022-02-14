@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Google.Apis.CustomSearchAPI.v1;
-using Google.Apis;
-using System.Net.Http;
-using System.Web;
-using System.Json;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Diagnostics;
+﻿using Newtonsoft.Json.Linq;
 
 namespace CompanySearcher
 {
@@ -29,8 +17,8 @@ namespace CompanySearcher
             // 2) directory for the output file
 
             // Hard-Coding the argument for testing
-            args = new string[] { @"D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\data\BadSearch.txt", @"D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\data\outputlinks.txt" };
-            //args = new string[] { @"D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\data\SampleSearch.txt", @"D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\data\outputlinks.txt" };
+            //args = new string[] { @"D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\data\BadSearch.txt", @"D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\data\outputlinks.txt" };
+            args = new string[] { @"D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\data\SampleSearch.txt", @"D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\data\outputlinks.txt" };
 
             // The processing is placed in a try block so that when an exception is thrown, it will be shown to the user and processing will be stopped
             try
@@ -50,7 +38,7 @@ namespace CompanySearcher
 
                 Console.WriteLine("Searching for file.");
                 (fileFound, fileErrorMessage) = FindFile(args[0]);
-            
+
                 if (!fileFound)
                 {
                     throw new Exception(fileErrorMessage);
@@ -74,7 +62,7 @@ namespace CompanySearcher
 
                 bool resultsObtained = false;
                 string searchErrorMessage = string.Empty;
-                    
+
                 (resultsObtained, searchErrorMessage) = ExecuteSearches();
 
                 if (!resultsObtained)
