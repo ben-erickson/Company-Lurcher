@@ -10,6 +10,7 @@ using System.Web;
 using System.Json;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Diagnostics;
 
 namespace CompanySearcher
 {
@@ -23,23 +24,41 @@ namespace CompanySearcher
 
         public static void Main(string[] args)
         {
-            // Arguments: 1) either the full directory to the data file, or the name of the file in the AppData folder
+            // Arguments:
+            // 1) either the full directory to the data file, or the name of the file in the AppData folder
             // 2) directory for the output file
 
             // Hard-Coding the argument for testing
-            args = new string[] { @"D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\data\SampleSearch.txt", @"D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\data\outputlinks.txt" };
+            args = new string[] { @"D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\data\BadSearch.txt", @"D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\data\outputlinks.txt" };
+            //args = new string[] { @"D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\data\SampleSearch.txt", @"D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\data\outputlinks.txt" };
 
-            bool fileFound = false;
-            string fileErrorMessage = string.Empty;
-
-            (fileFound, fileErrorMessage) = FindFile(args[0]);
-
-            if (!fileFound)
+            // The processing is placed in a try block so that when an exception is thrown, it will be shown to the user and processing will be stopped
+            try
             {
-                Console.WriteLine(fileErrorMessage);
-            }
-            else
-            {
+                // Check for correct number of arguments
+                if (args.Length == 0)
+                {
+                    throw new Exception("No arguments were given. Please provide the directory of the input file, and the desired output directory.");
+                }
+                else if (args.Length == 1)
+                {
+                    throw new Exception("Please provide two arguments: the directory of the input file, and the desired output directory.");
+                }
+
+                bool fileFound = false;
+                string fileErrorMessage = string.Empty;
+
+                Console.WriteLine("Searching for file.");
+                (fileFound, fileErrorMessage) = FindFile(args[0]);
+            
+                if (!fileFound)
+                {
+                    throw new Exception(fileErrorMessage);
+                }
+
+                // File has been found, get the data out of the file
+                Console.WriteLine("File has been found. Extracting data.");
+
                 bool dataObtained = false;
                 string dataErrorMessage = string.Empty;
 
@@ -47,26 +66,36 @@ namespace CompanySearcher
 
                 if (!dataObtained)
                 {
-                    Console.WriteLine(dataErrorMessage);
+                    throw new Exception(dataErrorMessage);
                 }
-                else
-                {
-                    bool resultsObtained = false;
-                    string searchErrorMessage = string.Empty;
-                    
-                    (resultsObtained, searchErrorMessage) = ExecuteSearches();
 
-                    if (resultsObtained)
+                // Data has been extracted, execute the searches defined by the file
+                Console.WriteLine("Data has been extracted. Performing searches.");
+
+                bool resultsObtained = false;
+                string searchErrorMessage = string.Empty;
+                    
+                (resultsObtained, searchErrorMessage) = ExecuteSearches();
+
+                if (!resultsObtained)
+                {
+                    throw new Exception(searchErrorMessage);
+                }
+
+                // Searches have been executed successfully, write the results to a file
+                Console.WriteLine("Searches have been performed. Writing the results to a file.");
+
+                using (var file = File.CreateText(args[1]))
+                {
+                    for (int i = 0; i < resultLinks.Count; i++)
                     {
-                        using (var file = File.CreateText(args[1]))
-                        {
-                            for (int i = 0; i < resultLinks.Count; i++)
-                            {
-                                file.WriteLine(resultLinks[i].Item1 + ", " + String.Join(',', resultLinks[i].Item2));
-                            }
-                        }
+                        file.WriteLine(resultLinks[i].Item1 + ", " + String.Join(',', resultLinks[i].Item2));
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -75,12 +104,12 @@ namespace CompanySearcher
             bool success = true;
             string errorMessage = string.Empty;
 
-            foreach (List<string> keywordSearch in keywordSearches)
+            for (int i = 0; i < keywordSearches.Count; i++)
             {
                 // Turn the current search into an actual search string
                 string query = string.Empty;
 
-                foreach (string keyword in keywordSearch)
+                foreach (string keyword in keywordSearches[i])
                 {
                     query += keyword;
                 }
@@ -89,13 +118,24 @@ namespace CompanySearcher
 
                 using (var client = new HttpClient())
                 {
-                    using (var result = client.GetStringAsync(searchURL))
+                    try
                     {
-                        JObject resultJson = JObject.Parse(result.Result);
+                        using (var result = client.GetStringAsync(searchURL))
+                        {
+                            JObject resultJson = JObject.Parse(result.Result);
 
-                        List<string?> jsonLinks = resultJson["items"].Select(x => (string?)x.SelectToken("link")).ToList();
+                            List<string?> jsonLinks = resultJson["items"].Select(x => (string?)x.SelectToken("link")).ToList();
 
-                        resultLinks.Add((keywordSearch[0], jsonLinks));
+                            resultLinks.Add((keywordSearches[i][0], jsonLinks));
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        errorMessage = $"An error occured during the execution of the searches. Row number of error: {i + 1}.\nIf the error occured during the first search, the issue may be with the API key or the Search Engine key.";
+                        success = false;
+
+                        // If we hit an error during processing, exit the for loop
+                        break;
                     }
                 }
             }
@@ -161,7 +201,7 @@ namespace CompanySearcher
                 else
                 {
                     success = false;
-                    errorMessage = "Data file could not be found. Please enter the directory of the data file as the argument for the program.";
+                    errorMessage = "Data file could not be found. Please enter the directory of the data file as the first argument for the program.";
                 }
             }
 
