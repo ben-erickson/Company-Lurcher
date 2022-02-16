@@ -117,7 +117,7 @@ namespace CompanySearcher
                             resultLinks.Add((keywordSearches[i][0], jsonLinks));
                         }
                     }
-                    catch (Exception ex)
+                    catch
                     {
                         errorMessage = $"An error occured during the execution of the searches. Row number of error: {i + 1}.\nIf the error occured during the first search, the issue may be with the API key or the Search Engine key.";
                         success = false;
