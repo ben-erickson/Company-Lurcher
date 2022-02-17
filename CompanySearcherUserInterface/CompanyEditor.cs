@@ -37,6 +37,19 @@ namespace CompanySearcherUserInterface
 
         private void CompanyEditor_Load(object sender, EventArgs e)
         {
+            // Place the values from the working objects into the controls
+            this.txtCompanyName.Text = this._workingCompany.Name;
+            foreach (string keyword in this._workingCompany.Keywords)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                DataGridViewTextBoxCell cell = new DataGridViewTextBoxCell();
+
+                cell.Value = keyword;
+                row.Cells.Add(cell);
+
+                grdKeywords.Rows.Add(row);
+            }
+            
             // Subscribe to events
             this.btnSave.Click += BtnSave_Click;
         }
@@ -59,9 +72,12 @@ namespace CompanySearcherUserInterface
             this._workingCompany.Name = this.txtCompanyName.Text;
             this._workingCompany.Keywords.Clear();
 
-            foreach (DataGridViewRow row in this.grdKeywords.Rows)
+            for (int i = 0; i < this.grdKeywords.Rows.Count - 1; i++)
             {
-                this._workingCompany.Keywords.Add(row.Cells[0].Value.ToString());
+                if (this.grdKeywords.Rows[i].Cells[0].Value != null)
+                {
+                    this._workingCompany.Keywords.Add(this.grdKeywords.Rows[i].Cells[0].Value.ToString());
+                }
             }
 
             // Process the success of the form to the token

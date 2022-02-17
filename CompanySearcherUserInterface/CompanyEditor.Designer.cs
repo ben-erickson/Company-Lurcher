@@ -32,6 +32,7 @@
             this.txtCompanyName = new System.Windows.Forms.TextBox();
             this.grdKeywords = new System.Windows.Forms.DataGridView();
             this.btnSave = new System.Windows.Forms.Button();
+            this.Keyword = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdKeywords)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,8 +55,11 @@
             // grdKeywords
             // 
             this.grdKeywords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdKeywords.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Keyword});
             this.grdKeywords.Location = new System.Drawing.Point(15, 67);
             this.grdKeywords.Name = "grdKeywords";
+            this.grdKeywords.RowHeadersVisible = false;
             this.grdKeywords.RowHeadersWidth = 51;
             this.grdKeywords.RowTemplate.Height = 24;
             this.grdKeywords.Size = new System.Drawing.Size(327, 262);
@@ -69,6 +73,13 @@
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // Keyword
+            // 
+            this.Keyword.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Keyword.HeaderText = "Keyword";
+            this.Keyword.MinimumWidth = 6;
+            this.Keyword.Name = "Keyword";
             // 
             // CompanyEditor
             // 
@@ -93,5 +104,6 @@
         private System.Windows.Forms.TextBox txtCompanyName;
         private System.Windows.Forms.DataGridView grdKeywords;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Keyword;
     }
 }

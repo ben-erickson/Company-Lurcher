@@ -28,5 +28,16 @@ namespace CompanySearcherUserInterface
             this.Name = name;
             this.Keywords = keywords;
         }
+
+        public void CopyData(Company original)
+        {
+            this.Keywords.Clear();
+
+            this.Name = original.Name;
+            foreach (string keyword in original.Keywords)
+            {
+                this.Keywords.Add(keyword);
+            }
+        }
     }
 }

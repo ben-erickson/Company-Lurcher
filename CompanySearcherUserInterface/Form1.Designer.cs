@@ -37,6 +37,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.Company = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdCompanies)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,9 +84,13 @@
             // 
             // grdCompanies
             // 
+            this.grdCompanies.AllowUserToAddRows = false;
             this.grdCompanies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdCompanies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Company});
             this.grdCompanies.Location = new System.Drawing.Point(12, 178);
             this.grdCompanies.Name = "grdCompanies";
+            this.grdCompanies.RowHeadersVisible = false;
             this.grdCompanies.RowHeadersWidth = 51;
             this.grdCompanies.RowTemplate.Height = 24;
             this.grdCompanies.Size = new System.Drawing.Size(385, 256);
@@ -117,6 +122,13 @@
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            // 
+            // Company
+            // 
+            this.Company.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Company.HeaderText = "Column1";
+            this.Company.MinimumWidth = 6;
+            this.Company.Name = "Company";
             // 
             // Form1
             // 
@@ -151,6 +163,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Company;
     }
 }
 
