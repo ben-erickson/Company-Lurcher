@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace CompanySearcherUserInterface
 {
@@ -66,7 +60,7 @@ namespace CompanySearcherUserInterface
             else if (fileResult != DialogResult.Cancel)
             {
                 MessageBox.Show("An error occured when trying to save your file. Please try again.");
-            }            
+            }
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -100,7 +94,8 @@ namespace CompanySearcherUserInterface
                 MessageBox.Show("Please select a company to edit.");
                 return;
             }
-            else if (this.grdCompanies.SelectedCells.Count != 1) {
+            else if (this.grdCompanies.SelectedCells.Count != 1)
+            {
                 MessageBox.Show("Please select a single row company to edit.");
                 return;
             }

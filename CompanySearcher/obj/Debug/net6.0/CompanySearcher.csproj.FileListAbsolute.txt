@@ -6,7 +6,6 @@ D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Debu
 D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Debug\net6.0\CompanySearcher.deps.json
 D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Debug\net6.0\CompanySearcher.runtimeconfig.json
 D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Debug\net6.0\CompanySearcher.dll
-D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Debug\net6.0\ref\CompanySearcher.dll
 D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Debug\net6.0\CompanySearcher.pdb
 D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\obj\Debug\net6.0\CompanySearcher.dll
 D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\obj\Debug\net6.0\ref\CompanySearcher.dll
@@ -19,3 +18,4 @@ D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Debu
 D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\obj\Debug\net6.0\CompanySearcher.csproj.AssemblyReference.cache
 D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\obj\Debug\net6.0\CompanySearcher.csproj.CopyComplete
 D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Debug\net6.0\System.Json.dll
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\obj\Debug\net6.0\refint\CompanySearcher.dll

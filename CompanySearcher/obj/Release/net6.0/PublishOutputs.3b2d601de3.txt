@@ -1,0 +1,10 @@
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Release\net6.0\publish\CompanySearcher.exe
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Release\net6.0\publish\CompanySearcher.dll
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Release\net6.0\publish\CompanySearcher.deps.json
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Release\net6.0\publish\CompanySearcher.runtimeconfig.json
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Release\net6.0\publish\CompanySearcher.pdb
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Release\net6.0\publish\Google.Apis.dll
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Release\net6.0\publish\Google.Apis.Core.dll
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Release\net6.0\publish\Google.Apis.CustomSearchAPI.v1.dll
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Release\net6.0\publish\Newtonsoft.Json.dll
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\bin\Release\net6.0\publish\System.Json.dll
