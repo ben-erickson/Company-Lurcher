@@ -7,20 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace CompanySearcherUserInterface
 {
     public partial class Form1 : Form
     {
-        private string APIKey;
-        private string SearchEngineKey;
         private List<Company> Companies;
         public Form1()
         {
             InitializeComponent();
 
-            this.APIKey = string.Empty;
-            this.SearchEngineKey = string.Empty;
             this.Companies = new List<Company>();
 
             this.Load += Form1_Load;
@@ -37,7 +34,39 @@ namespace CompanySearcherUserInterface
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            // Open a file dialog for the user to place the file
+            SaveFileDialog fileDialog = new SaveFileDialog();
+            fileDialog.Filter = "Text Files | *.txt";
+
+            DialogResult fileResult = fileDialog.ShowDialog();
+
+            if (fileResult == DialogResult.OK)
+            {
+                // Put all of the lines of the file into a list, so they can just all be written to a file
+                List<string> fileLines = new List<string>();
+
+                // The first two lines of the file are the API key and the Search Engine Key, so add those to the list
+                fileLines.Add(this.txtApiKey.Text);
+                fileLines.Add(this.txtSearchEngineKey.Text);
+
+                foreach (Company searchCompany in this.Companies)
+                {
+                    string companyLine = string.Empty;
+
+                    companyLine += $"{searchCompany.Name}, ";
+                    companyLine += string.Join(", ", searchCompany.Keywords);
+
+                    fileLines.Add(companyLine);
+                }
+
+                File.WriteAllLines(fileDialog.FileName, fileLines);
+
+                MessageBox.Show("Your file has been successfully saved at: " + fileDialog.FileName);
+            }
+            else if (fileResult != DialogResult.Cancel)
+            {
+                MessageBox.Show("An error occured when trying to save your file. Please try again.");
+            }            
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)

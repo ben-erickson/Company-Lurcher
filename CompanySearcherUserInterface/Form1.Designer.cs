@@ -126,7 +126,7 @@
             // Company
             // 
             this.Company.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Company.HeaderText = "Column1";
+            this.Company.HeaderText = "Companies";
             this.Company.MinimumWidth = 6;
             this.Company.Name = "Company";
             // 
