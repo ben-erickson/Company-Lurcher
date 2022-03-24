@@ -76,7 +76,7 @@ namespace CompanySearcher
                 Console.WriteLine("Searches have been performed. Writing the results to a file.");
 
                 // Add filename to directory given in argument
-                string outputFileName = args[1] + "\\LurcherSearch" + DateTime.Today.ToString("mm-dd-yyyy") + ".csv";
+                string outputFileName = args[1] + "\\LurcherSearch-" + DateTime.Today.ToString("mm-dd-yyyy") + ".csv";
 
                 using (var file = File.CreateText(outputFileName))
                 {
