@@ -16,8 +16,6 @@ namespace CompanySearcher
             // 1) either the full directory to the data file, or the name of the file in the AppData folder
             // 2) directory for the output file
 
-            args = new string[] { @"C:\Users\bener\OneDrive\Desktop\samplesearch.txt", @"C:\Users\bener\OneDrive\Desktop" };
-
             // The processing is placed in a try block so that when an exception is thrown, it will be shown to the user and processing will be stopped
             try
             {
