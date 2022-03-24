@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CompanySearcherUserInterface.exe" size="17376">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CompanySearcherUserInterface.exe" size="17888">
       <assemblyIdentity name="CompanySearcherUserInterface" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GHSJSQ6BeLIjq59s8uoR0ShTl9abaVrWgmsHhXuAqzQ=</dsig:DigestValue>
+        <dsig:DigestValue>tZQkLKzVwXhN1nL87AtiQ+ES8fmDo/uw9NpHomgXrCY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

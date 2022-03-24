@@ -10,3 +10,7 @@ D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcherUserInter
 D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcherUserInterface\obj\Debug\CompanySearcherUserInterface.csproj.CoreCompileInputs.cache
 D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcherUserInterface\obj\Debug\CompanySearcherUserInterface.exe
 D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcherUserInterface\obj\Debug\CompanySearcherUserInterface.pdb
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcherUserInterface\bin\Debug\CompanySearcherUserInterface.exe.manifest
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcherUserInterface\bin\Debug\CompanySearcherUserInterface.application
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcherUserInterface\obj\Debug\CompanySearcherUserInterface.exe.manifest
+D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcherUserInterface\obj\Debug\CompanySearcherUserInterface.application

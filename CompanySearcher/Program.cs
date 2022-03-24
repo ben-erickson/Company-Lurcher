@@ -16,9 +16,7 @@ namespace CompanySearcher
             // 1) either the full directory to the data file, or the name of the file in the AppData folder
             // 2) directory for the output file
 
-            // Hard-Coding the argument for testing
-            //args = new string[] { @"D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\data\BadSearch.txt", @"D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\data\outputlinks.txt" };
-            args = new string[] { @"D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\data\SampleSearch.txt", @"D:\Project Repositories\KeywordSearcher\CompanySearcher\CompanySearcher\data\outputlinks.txt" };
+            args = new string[] { @"C:\Users\bener\OneDrive\Desktop\samplesearch.txt", @"C:\Users\bener\OneDrive\Desktop" };
 
             // The processing is placed in a try block so that when an exception is thrown, it will be shown to the user and processing will be stopped
             try
@@ -28,9 +26,15 @@ namespace CompanySearcher
                 {
                     throw new Exception("No arguments were given. Please provide the directory of the input file, and the desired output directory.");
                 }
-                else if (args.Length == 1)
+                else if (args.Length != 2)
                 {
                     throw new Exception("Please provide two arguments: the directory of the input file, and the desired output directory.");
+                }
+
+                // Check if output directory exists
+                if (!Directory.Exists(args[1]))
+                {
+                    throw new Exception("Output directory could not be found. Please enter a valid directory for the output file.");
                 }
 
                 bool fileFound = false;
@@ -73,7 +77,10 @@ namespace CompanySearcher
                 // Searches have been executed successfully, write the results to a file
                 Console.WriteLine("Searches have been performed. Writing the results to a file.");
 
-                using (var file = File.CreateText(args[1]))
+                // Add filename to directory given in argument
+                string outputFileName = args[1] + "\\LurcherSearch" + DateTime.Today.ToString("mm-dd-yyyy") + ".csv";
+
+                using (var file = File.CreateText(outputFileName))
                 {
                     for (int i = 0; i < resultLinks.Count; i++)
                     {
